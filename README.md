@@ -18,8 +18,8 @@ I'm a developer who loves building cool things on the web. This portfolio is a r
 
 ## 🌐 Live Preview
 
-🔗 *Coming Soon...*
-(Will update once deployed 🚀)
+🔗 https://ishandasofficial.github.io/My-Portfolio/<img width="916" height="421" alt="SS1" src="https://github.com/user-attachments/assets/82c11667-f756-49be-bb4b-c97d347f8330" />
+
 
 ---
 
@@ -63,6 +63,9 @@ open index.html
 
 ## 📸 Screenshots
 
+<img width="920" height="380" alt="SS3" src="https://github.com/user-attachments/assets/aa8499ed-97e1-4997-9314-0413ce02b172" />
+<img width="947" height="419" alt="SS2" src="https://github.com/user-attachments/assets/eb81adce-870f-4988-b663-1f80f5b398e5" />
+<img width="916" height="421" alt="SS1" src="https://github.com/user-attachments/assets/e34770b7-d055-400a-bc56-34fef23e64ef" />
 
 ---
 
@@ -99,7 +102,7 @@ If you like this project, don't forget to:
 
 ## 📝 License
 
-This project is licensed under the **The Unlicense**.
+This project is licensed under **The Unlicense**.
 
 ---
 
