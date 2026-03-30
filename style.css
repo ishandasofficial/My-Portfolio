@@ -185,3 +185,16 @@ footer {
   border-radius: 8px;
   font-size: 14px;
 }
+.project-grid {
+  counter-reset: project-counter;
+}
+
+.project-card {
+  counter-increment: project-counter;
+}
+
+.project-card h3::before {
+  content: counter(project-counter) ". ";
+  font-weight: bold;
+  color: #00adb5; /* optional styling */
+}
