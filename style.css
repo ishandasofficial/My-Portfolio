@@ -1,0 +1,187 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0a192f;
+  color: #ccd6f6;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero img {
+  width: 140px;
+  border-radius: 50%;
+  border: 3px solid #64ffda;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.tagline {
+  color: #64ffda;
+  margin-top: 10px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  background: rgba(10,25,47,0.9);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #64ffda;
+}
+
+/* SECTION */
+section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #64ffda;
+}
+
+/* TEXT */
+.section-text {
+  max-width: 600px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.skill {
+  background: #112240;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  background: #64ffda;
+  color: black;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.project-card {
+  background: #112240;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-left: 4px solid #64ffda;
+}
+
+/* CONTACT */
+#contact a {
+  color: #64ffda;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #020c1b;
+  margin-top: 50px;
+}
+
+.cert-card img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+}
+
+.cert-card {
+  text-align: center;
+}
+.cert-card h3 {
+  margin-top: 15px;
+  color: #64ffda;
+}
+.cert-card p {
+  margin-top: 10px;
+  color: #ccd6f6;
+}
+.cert-grid {
+  counter-reset: cert-counter;
+}
+
+.cert-card {
+  counter-increment: cert-counter;
+  position: relative;
+}
+
+.cert-card::before {
+  content: "0" counter(cert-counter);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
