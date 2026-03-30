@@ -102,7 +102,7 @@ If you like this project, don't forget to:
 
 ## 📝 License
 
-This project is licensed under the **The Unlicense**.
+This project is licensed under **The Unlicense**.
 
 ---
 
