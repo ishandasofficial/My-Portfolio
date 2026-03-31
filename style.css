@@ -35,6 +35,16 @@ nav a {
   color: white;
   padding: 10px;
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* IMPORTANT */
+}
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 /* SECTION */
