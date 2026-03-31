@@ -12,4 +12,4 @@ function revealSections() {
 }
 
 window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);s
+window.addEventListener("load", revealSections);
