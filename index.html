@@ -2,69 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>Ishan Das | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<header class="hero">
-  <img src="profilepic.png" alt="Profile Picture" loading="lazy">
-  <h1>ISHAN DAS</h1>
-  <br>
-  <p class="tagline">
-    AI/ML Enthusiast • Developer (Frontend + Backend) • Data Analyst • Freelancer
-  </p>
-</header>
+<!-- Hamburger Navigation -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
+<nav id="sidebar">
+  <ul>
+    <li><a href="#about">01. About</a></li>
+    <li><a href="#education">02. Education</a></li>
+    <li><a href="#skills">03. Skills</a></li>
+    <li><a href="#certifications">04. Certifications</a></li>
+    <li><a href="#projects">05. Projects</a></li>
+    <li><a href="#experience">06. Experience</a></li>
+    <li><a href="#volunteering">07. Volunteering</a></li>
+    <li><a href="#contact">08. Contact</a></li>
+  </ul>
 </nav>
 
-<section id="about">
-  <h2>About Me</h2>
-  <br>
-  <p class="section-text">
-   Welcome to my Portfolio Website! Ishan this side. It's really great to have you here, I am an aspiring Computer Science Engineering graduate with strong interests in Software Development, Web Development, Data Analysis, and Machine Learning Engineering.
-    I have a solid foundation in programming languages, data structures, and algorithms, which I have honed through my academic journey and personal projects. I am passionate about leveraging technology to solve real-world problems and create innovative solutions.
-    Currently, I am upskilling myself by learning in demand technologies such as Artificial Intelligence, programming languages, and modern database systems to stay aligned with the evolving tech industry.
+<header class="hero">
+  <img src="profilepic.png" alt="Profile Picture">
+  <h1>ISHAN DAS</h1>
+  <p class="tagline"><span id="typing"></span></p>
+  <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+</header>
 
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <p class="section-text">
+    Welcome to my Portfolio Website! Ishan this side. It's really great to have you here. I am an aspiring Computer Science Engineering graduate with strong interests in Software Development, Web Development, Data Analysis, and Machine Learning Engineering.
+    I have a solid foundation in programming languages, data structures, and algorithms, which I have honed through my academic journey and personal projects. I am passionate about leveraging technology to solve real-world problems and create innovative solutions.
+    Currently, I am upskilling myself by learning in-demand technologies such as Artificial Intelligence, programming languages, and modern database systems to stay aligned with the evolving tech industry.
     Let’s connect and collaborate on innovative ideas and opportunities.
   </p>
-  
 </section>
 
-<section id="education">
+<section id="education" class="reveal numbered-section">
   <h2>Education</h2>
-  <br>
-  <div class="card">
-    <h3>Grade 10th CBSE</h3>
-    <p>Don Bosco School, Kharagpur</p>
-
-    <br>
-
-    <h3>Grade 12th CBSE</h3>
-    <p>Don Bosco School, Kharagpur - Science (PCM + CS)</p>
-
-    <br>
-
-    <h3>B.Tech(H)-CSE in AI</h3>
-    <p>Techno India University, West Bengal</p>
-  </div>
+  <div class="card">Grade 10th CBSE – Don Bosco School, Kharagpur</div>
+  <div class="card">Grade 12th CBSE – Don Bosco School, Kharagpur (Science: PCM + CS)</div>
+  <div class="card">B.Tech(H)-CSE in AI – Techno India University, West Bengal</div>
 </section>
 
-<section id="skills">
+<section id="skills" class="reveal numbered-section">
   <h2>Skills</h2>
-
   <div class="skills-grid">
     <div class="skill-card">Python</div>
     <div class="skill-card">Linux</div>
@@ -77,123 +69,53 @@
   </div>
 </section>
 
-<section id="certifications">
+<section id="certifications" class="reveal numbered-section">
   <h2>Certifications</h2>
-  <br>
-
   <div class="cert-grid">
-
-    <div class="cert-card">
-      <img src="Gemini-Certificate.png" alt="">
-      <br>
-      <h3>AI Training with Gemini</h3>
-    </div>
-
-    <div class="cert-card">
-      <img src="Python-Certificate.png" alt="">
-      <br>
-      <h3>Python</h3>
-    </div>
-
-    <div class="cert-card">
-      <img src="Be10x-Certification.png" alt="">
-      <br>
-      <h3>Be10x AI Tools Workshop</h3>
-    </div>
-
-    <div class="cert-card">
-      <img src="Data-Analytics-Job-Simulation.png" alt="">
-      <br>
-      <h3>Data Analytics - Deloitte</h3>
-    </div>
-
-    <div class="cert-card">
-      <img src="GenAI-Powered-Data-Analytics-JBSim.png" alt="">
-      <br>
-      <h3>GenAI Data Analytics - Deloitte</h3>
-    </div>
-
+    <div class="cert-card"><a href="gemini-certificate.pdf" target="_blank"><img src="Gemini-Certificate.png" alt="Gemini Certificate"><h3>AI Training with Gemini</h3></a></div>
+    <div class="cert-card"><a href="python-certificate.pdf" target="_blank"><img src="Python-Certificate.png" alt="Python Certificate"><h3>Python</h3></a></div>
+    <div class="cert-card"><a href="be10x-certification.pdf" target="_blank"><img src="Be10x-Certification.png" alt="Be10x Certification"><h3>Be10x AI Tools Workshop</h3></a></div>
+    <div class="cert-card"><a href="data-analytics-certificate.pdf" target="_blank"><img src="Data-Analytics-Job-Simulation.png" alt="Data Analytics Certificate"><h3>Data Analytics - Deloitte</h3></a></div>
+    <div class="cert-card"><a href="genai-data-analytics-certificate.pdf" target="_blank"><img src="GenAI-Powered-Data-Analytics-JBSim.png" alt="GenAI Data Analytics Certificate"><h3>GenAI Data Analytics - Deloitte</h3></a></div>
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="reveal numbered-section">
   <h2>Projects</h2>
-  <br>
   <div class="project-grid">
-<div class="project-card">
-  <h3>Image To PDF Converter</h3>
-  <br>
-  <p>A simple application to convert images to PDF using Python.</p>
-
-  <a href="https://github.com/ishandasofficial/Image-To-PDF-Converter-with-GUI.git" target="_blank" class="project-btn">
-    View on GitHub
-  </a>
-</div>
+    <div class="project-card">
+      <h3>Image To PDF Converter</h3>
+      <p>A simple application to convert images to PDF using Python.</p>
+      <a href="https://github.com/ishandasofficial/Image-To-PDF-Converter-with-GUI.git" target="_blank" class="project-btn">View Project</a>
+    </div>
+  </div>
 </section>
 
-<section id="experience">
+<section id="experience" class="reveal numbered-section">
   <h2>Experience</h2>
-  <br>
-  <div class="card">
-    <p>Fresher</p>
-  </div>
+  <div class="card">Fresher</div>
 </section>
 
-
-<section id="volunteering">
+<section id="volunteering" class="reveal numbered-section">
   <h2>Volunteering</h2>
-  <br>
-  <div class="card">
-    <h3>Miro Meetups Kolkata</h3>
-    <b><h5>Student Volunteer</h5></b>
-    <h5>March 2026 - Present</h5> 
-  </div>
-  <div class="card">
-    <h3>AWS Cloud Club TIU</h3>
-    <b><h5>Student Volunteer</h5></b>
-    <h5>February 2026 - March 2026</h5> 
-  </div>
-
-
+  <div class="card">AWS(Amazon Web Services) Cloud Club Techno India University</div>
+  <div class="card">Miro Meetups Kolkata</div>
 </section>
 
-
-<section id="contact">
+<section id="contact" class="reveal">
   <h2>Contact</h2>
-  <br>
-
-  <div class="contact-item">
-    <i class="fas fa-envelope"></i>
-    <a href="mailto:ishandasofficial18@gmail.com" style="color: aliceblue;">Email</a>
-  </div>
-
-  <div class="contact-item">
-    <i class="fab fa-linkedin"></i>
-    <a href="https://www.linkedin.com/in/ishandasofficial" target="_blank" style="color: aliceblue;">
-      LinkedIn
-    </a>
-  </div>
-
-  <div class="contact-item">
-  <i class="fab fa-github"></i>
-  <a href="https://github.com/ishandasofficial" target="_blank" style="color: aliceblue;">
-    ishandasofficial
-  </a>
-</div>
-
-<div class="contact-item">
-  <i class="fab fa-instagram"></i>
-  <a href="https://instagram.com/_ishannn_18" target="_blank" style="color: aliceblue;">
-    _ishannn_18
-  </a>
-</div>
-
+  <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:ishandasofficial18@gmail.com">Email</a></div>
+  <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ishandasofficial" target="_blank">LinkedIn</a></div>
+  <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/ishandasofficial" target="_blank">GitHub</a></div>
+  <div class="contact-item"><i class="fab fa-instagram"></i> <a href="https://instagram.com/_ishannn_18" target="_blank">_ishannn_18</a></div>
 </section>
 
-<!-- FOOTER -->
+<!-- Scroll to Top Button -->
+<button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
+
 <footer>
-  <p>© 2026 Ishan Das</p>
-  <p>Thank you for visiting. Let’s build something great together.</p>
+  <center><p>© 2026 Ishan Das</p></center>
+  <center><p>Thank you for visiting. Let’s build something great together.</p></center>
 </footer>
 
 <script src="script.js"></script>
