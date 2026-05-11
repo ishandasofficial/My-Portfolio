@@ -1,88 +1,28 @@
-// =========================
-// Hamburger Menu Toggle
-// =========================
+// Hamburger & Sidebar
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+const spans = hamburger.querySelectorAll('span');
 
-hamburger.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-  hamburger.classList.toggle('open');
-});
-
-// Animate hamburger into X when open
-hamburger.addEventListener('click', () => {
-  const spans = hamburger.querySelectorAll('span');
-  if (hamburger.classList.contains('open')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-  } else {
-    spans[0].style.transform = 'rotate(0) translate(0,0)';
-    spans[1].style.opacity = '1';
-    spans[2].style.transform = 'rotate(0) translate(0,0)';
-  }
-});
-
-// Close sidebar on link click
-document.querySelectorAll('#sidebar a').forEach(link => {
-  link.addEventListener('click', () => sidebar.classList.remove('active'));
-});
-
-// =========================
-// Ripple Effect
-// =========================
-document.querySelectorAll("a, button, .project-btn").forEach(el => {
-  el.addEventListener("click", function(e) {
-    const circle = document.createElement("span");
-    circle.classList.add("ripple");
-    const rect = this.getBoundingClientRect();
-    circle.style.left = e.clientX - rect.left + "px";
-    circle.style.top = e.clientY - rect.top + "px";
-    this.appendChild(circle);
-    setTimeout(() => circle.remove(), 600);
-  });
-});
-
-// =========================
-// Scroll Reveal
-// =========================
-const reveals = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) el.classList.add("active");
-  });
-});
-
-// =========================
-// Typing Effect
-// =========================
-const text = ["AI/ML Enthusiast", "Full Stack Developer", "Data Analyst", "Freelancer"];
-let i = 0, j = 0, currentText = "", isDeleting = false;
-
-function typeEffect() {
-  currentText = text[i];
-  if (isDeleting) j--; else j++;
-  document.getElementById("typing").textContent = currentText.substring(0, j);
-
-  if (!isDeleting && j === currentText.length) {
-    isDeleting = true;
-    setTimeout(typeEffect, 1000);
-    return;
-  }
-  if (isDeleting && j === 0) {
-    isDeleting = false;
-    i = (i + 1) % text.length;
-  }
-  setTimeout(typeEffect, isDeleting ? 50 : 100);
+function toggleMenu(open) {
+  sidebar.classList.toggle('active', open);
+  overlay.classList.toggle('active', open);
+  hamburger.classList.toggle('open', open);
 }
-typeEffect();
 
-// =========================
-// Scroll to Top Button
-// =========================
-const scrollBtn = document.getElementById("scrollToTop");
-window.addEventListener("scroll", () => {
-  scrollBtn.style.display = (window.scrollY > 300) ? "block" : "none";
+hamburger.addEventListener('click', () => toggleMenu(!sidebar.classList.contains('active')));
+overlay.addEventListener('click', () => toggleMenu(false));
+document.querySelectorAll('#sidebar a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+
+// Scroll Reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Scroll to Top
+const scrollBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', () => {
+  scrollBtn.style.display = scrollY > 300 ? 'flex' : 'none';
 });
-scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+scrollBtn.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
