@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume — Ishan Das</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: #242424;
+      --accent: #e8622a;
+      --accent2: #c94f1a;
+      --text: #e8e8e8;
+      --text-muted: #888;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Animated background grid */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.4;
+      animation: gridShift 20s linear infinite;
+    }
+
+    @keyframes gridShift {
+      from { background-position: 0 0; }
+      to   { background-position: 60px 60px; }
+    }
+
+    /* Glow orb */
+    .glow-orb {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,98,42,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50%       { transform: translate(-50%, -50%) scale(1.15); opacity: 0.7; }
+    }
+
+    /* Main content */
+    .container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 40px 24px;
+      max-width: 700px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 40px;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .badge i {
+      font-size: 10px;
+      animation: spin 3s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .coming-soon {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 12vw, 110px);
+      line-height: 1;
+      margin-bottom: 8px;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+
+    .coming-soon .line1 {
+      display: block;
+      color: var(--text);
+    }
+
+    .coming-soon .line2 {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      margin: 32px auto;
+      animation: expandWidth 1s ease 0.5s both;
+    }
+
+    @keyframes expandWidth {
+      from { width: 0; opacity: 0; }
+      to   { width: 60px; opacity: 1; }
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0 auto 48px;
+      animation: fadeUp 0.9s ease 0.4s both;
+    }
+
+    .subtitle strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      animation: fadeUp 0.9s ease 0.6s both;
+    }
+
+    .back-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Corner decoration */
+    .corner-tag {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: var(--text-muted);
+      opacity: 0.5;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: fadeUp 1s ease 1s both;
+    }
+
+    /* Floating dots */
+    .dot {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.4;
+      animation: floatDot linear infinite;
+    }
+
+    @keyframes floatDot {
+      from { transform: translateY(0) scale(1); opacity: 0.4; }
+      to   { transform: translateY(-100vh) scale(0); opacity: 0; }
+    }
+
+    /* Keyframe animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="glow-orb"></div>
+
+  <div class="container">
+    <div class="badge">
+      <i class="fas fa-circle"></i>
+      Resume · Ishan Das
+    </div>
+
+    <h1 class="coming-soon">
+      <span class="line1">Coming</span>
+      <span class="line2">Soon.</span>
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="subtitle">
+      My resume is currently being <strong>crafted & polished</strong>.<br>
+      Check back soon — it'll be worth the wait.
+    </p>
+
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </div>
+
+  <p class="corner-tag">© 2026 · Ishan Das</p>
+
+  <script>
+    // Generate floating dots
+    for (let i = 0; i < 12; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.bottom = '-10px';
+      dot.style.animationDuration = (6 + Math.random() * 10) + 's';
+      dot.style.animationDelay = (Math.random() * 10) + 's';
+      dot.style.width = dot.style.height = (3 + Math.random() * 4) + 'px';
+      document.body.appendChild(dot);
+    }
+  </script>
+
+</body>
+</html>
